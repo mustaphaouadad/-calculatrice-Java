@@ -13,7 +13,8 @@ public class Main {
     public static double Division(double a,double b){
         if (b==0) {
             System.out.println("erreur:dividion par zero");
-            return 0;}else {
+            return 0;
+        }else {
             return a / b;
         }
     }
@@ -66,6 +67,22 @@ public class Main {
                     num2=scanner.nextDouble();
                     System.out.println("Résultat: "+ addition(num1,num2));
                     break;
+                case 2:
+                    System.out.println("Entrez le premier nombre:");
+                    num1 = scanner.nextDouble();
+                    System.out.print("Entrez le deuxième nombre: ");
+                    num2 = scanner.nextDouble();
+                    System.out.println("Résultat: " + Soustraction(num1,num2));
+                    break;
+                case 3:
+                    System.out.println("Entrez le premier nombre: ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Entrez le deuxième nombre: ");
+                    num2 = scanner.nextDouble();
+                    System.out.println("Résultat: " +Multiplication(num1,num2));
+                    break;
+
+
             }
 
         }
