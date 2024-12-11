@@ -55,6 +55,17 @@ public class Main {
             int choix = scanner.nextInt();
             if (choix==0){
                 System.out.println("Programme terminé.");
+                break;
+            }
+            double num1,num2;
+            switch (choix){
+                case 1:
+                    System.out.println("Entrez le premier nombre:");
+                    num1=scanner.nextDouble();
+                    System.out.println("Entrez le deuxième nombre:");
+                    num2=scanner.nextDouble();
+                    System.out.println("Résultat: "+ addition(num1,num2));
+                    break;
             }
 
         }
