@@ -1,49 +1,53 @@
 import java.util.Scanner;
 
 public class Main {
-    public static double addition(double a,double b){
-        return a+b;
+
+
+    public static double addition(double a, double b) {
+        return a + b;
     }
-    public static double Soustraction(double a,double b){
-        return a-b;
+    public static double soustraction(double a, double b) {
+        return a - b;
     }
-    public static double Multiplication(double a,double b){
-        return a*b;
+    public static double multiplication(double a, double b) {
+        return a * b;
     }
-    public static double Division(double a,double b){
-        if (b==0) {
-            System.out.println("erreur:dividion par zero");
+    public static double division(double a, double b) {
+        if (b == 0) {
+            System.out.println("Erreur: Division par zéro !");
             return 0;
-        }else {
+        } else {
             return a / b;
         }
     }
-    public static double  Puissance(double a,double b){
-        return Math.pow(a,b);
+    public static double puissance(double a, double b) {
+        return Math.pow(a, b);
     }
-    public static double Racine_carree(double a,double b){
-        if (a<0){
-            System.out.println("Erreur: Racine carrée d'un nombre négatif !");
+    public static double racineCarree(double a) {
+        if (a < 0) {
+            System.out.println(" Erreur: Racine carrée d'un nombre négatif !");
             return -1;
-        }else {
+        } else {
             return Math.sqrt(a);
         }
     }
-    public static long factorielle(int n){
+    public static long factorielle(int n) {
         if (n < 0) {
             System.out.println("Erreur: Factorielle d'un nombre négatif !");
             return -1;
         }
-        long fact=1;
-        for (int i=1;i<=n;i++){
-            fact *=i;
+        long fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
         }
-      return fact;
+        return fact;
     }
     public static void main(String[] args) {
-        Scanner scanner =new Scanner(System.in);
-        while (true){
-            System.out.println("----------------Menu Calculatrice----------------");
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+
+            System.out.println("------ Menu Calculatrice ------");
             System.out.println("1. Addition");
             System.out.println("2. Soustraction");
             System.out.println("3. Multiplication");
@@ -53,39 +57,72 @@ public class Main {
             System.out.println("7. Factorielle");
             System.out.println("0. Quitter");
             System.out.print("Choisissez une option: ");
+
             int choix = scanner.nextInt();
-            if (choix==0){
+
+            if (choix == 0) {
                 System.out.println("Programme terminé.");
                 break;
             }
-            double num1,num2;
-            switch (choix){
+
+            double num1, num2;
+
+            switch (choix) {
                 case 1:
-                    System.out.println("Entrez le premier nombre:");
-                    num1=scanner.nextDouble();
-                    System.out.println("Entrez le deuxième nombre:");
-                    num2=scanner.nextDouble();
-                    System.out.println("Résultat: "+ addition(num1,num2));
-                    break;
-                case 2:
-                    System.out.println("Entrez le premier nombre:");
+                    System.out.print("Entrez le premier nombre: ");
                     num1 = scanner.nextDouble();
                     System.out.print("Entrez le deuxième nombre: ");
                     num2 = scanner.nextDouble();
-                    System.out.println("Résultat: " + Soustraction(num1,num2));
+                    System.out.println("Résultat: " + addition(num1, num2));
                     break;
-                case 3:
-                    System.out.println("Entrez le premier nombre: ");
+
+                case 2:
+                    System.out.print("Entrez le premier nombre: ");
                     num1 = scanner.nextDouble();
-                    System.out.println("Entrez le deuxième nombre: ");
+                    System.out.print("Entrez le deuxième nombre: ");
                     num2 = scanner.nextDouble();
-                    System.out.println("Résultat: " +Multiplication(num1,num2));
+                    System.out.println("Résultat: " + soustraction(num1, num2));
                     break;
 
+                case 3:
+                    System.out.print("Entrez le premier nombre: ");
+                    num1 = scanner.nextDouble();
+                    System.out.print("Entrez le deuxième nombre: ");
+                    num2 = scanner.nextDouble();
+                    System.out.println("Résultat: " + multiplication(num1, num2));
+                    break;
 
+                case 4:
+                    System.out.print("Entrez le premier nombre: ");
+                    num1 = scanner.nextDouble();
+                    System.out.print("Entrez le deuxième nombre: ");
+                    num2 = scanner.nextDouble();
+                    System.out.println("Résultat: " + division(num1, num2));
+                    break;
+
+                case 5:
+                    System.out.print("Entrez la base: ");
+                    num1 = scanner.nextDouble();
+                    System.out.print("Entrez l'exposant: ");
+                    num2 = scanner.nextDouble();
+                    System.out.println("Résultat: " + puissance(num1, num2));
+                    break;
+
+                case 6:
+                    System.out.print("Entrez le nombre: ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Résultat: " + racineCarree(num1));
+                    break;
+
+                case 7:
+                    System.out.print("Entrez un entier pour calculer sa factorielle: ");
+                    int n = scanner.nextInt();
+                    System.out.println("Résultat: " + factorielle(n));
+                    break;
+
+                default:
+                    System.out.println("Choix invalide, veuillez réessayer.");
             }
-
         }
-
     }
 }
